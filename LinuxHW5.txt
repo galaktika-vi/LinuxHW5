@@ -1,0 +1,23 @@
+shust@DESKTOP-0TOAGHL MINGW64 /
+
+#nano taskSHUSTROVA.sh
+
+#!/bin/bash
+
+tdate=$(date +"%H%M%S")
+for run in {1..10}
+do
+number=$run
+file="${number}${tdate}"
+touch $file
+done
+
+
+
+#Crontab command
+
+/15 * * * /opt/040423_evening/shustrova/taskSHUSTROVA.sh
+
+
+[ec2-user@ip-172-31-33-20 shustrova]$ crontab -l
+/15 * * * /opt/040423_evening/shust/taskSHUSTROVA.sh
